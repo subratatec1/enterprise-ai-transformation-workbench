@@ -4,6 +4,8 @@ An interactive, standalone, static MVP for five consulting-led enterprise AI tra
 
 Version 0.3 also includes a **Consulting Skill Inventory** covering 21 skills described by the user. No skill packages or runtime capabilities are bundled.
 
+Version 0.4 redesigns the **executive landing page** as an editorial consulting narrative: an AI transformation thesis, a connected five-discipline framework, an evidence-to-value workflow, and clear entry points to the interactive tools. Capability figures (5 accelerators, 10 dimensions, 43 questions, 21 skills) are counts of built-in MVP functionality, not client performance claims. The design is original and does not reuse the branding of any consulting firm.
+
 ## Modules
 
 1. **AI Strategy & Roadmap** — ten-dimension maturity assessment, target gaps, use-case opportunity rankings and milestone roadmap. Links directly to evidence-based scoring.
