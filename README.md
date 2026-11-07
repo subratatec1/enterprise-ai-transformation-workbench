@@ -2,9 +2,9 @@
 
 An interactive, standalone, static MVP for five consulting-led enterprise AI transformation accelerators, now including a linked **Evidence & Assessment** workspace. The methodology and 43 assessment criteria are drawn from the supplied BFSI toolkit. Maturity starting points, use cases and scenario values are **illustrative synthetic inputs**; new evidence starts empty.
 
-Version 0.3 also includes a **Consulting Skill Inventory** covering 21 skills described by the user. No skill packages or runtime capabilities are bundled.
+Version 0.3 introduced a **Consulting Skill Inventory** based on user-supplied descriptions. No skill packages or runtime capabilities are bundled.
 
-Version 0.4 redesigns the **executive landing page** as an editorial consulting narrative: an AI transformation thesis, a connected five-discipline framework, an evidence-to-value workflow, and clear entry points to the interactive tools. Capability figures (5 accelerators, 10 dimensions, 43 questions, 21 skills) are counts of built-in MVP functionality, not client performance claims. The design is original and does not reuse the branding of any consulting firm.
+Version 0.4 redesigned the **executive landing page** as an editorial consulting narrative: an AI transformation thesis, a connected five-discipline framework, an evidence-to-value workflow, and clear entry points to the interactive tools. Version 0.5 generalizes the public skill names and removes the RFP Intelligence entry. Capability figures (5 accelerators, 10 dimensions, 43 questions, 20 skills) are counts of built-in MVP functionality, not client performance claims. The design is original and does not reuse the branding of any consulting firm.
 
 ## Modules
 
@@ -29,21 +29,21 @@ Suggested consulting workflow: request proof → log safe artifact references an
 
 ### Consulting Skill Inventory (within Architecture that Scales)
 
-The **Consulting Skill Inventory** navigation entry includes all **21 user-supplied skill names and purposes**, arranged in five groups:
+The **Consulting Skill Inventory** navigation entry includes **20 public-facing skill candidates**, with generalized names where needed, arranged in five groups:
 
 | Group | Count |
 | --- | ---: |
 | Research and client intelligence | 5 |
 | Strategy and consulting deliverables | 6 |
 | Presentations and visualization | 6 |
-| Bid management and engagement delivery | 3 |
+| Engagement delivery | 2 |
 | Skill governance and development | 1 |
 
 It supports full-text search, category and verification filters, a detail panel showing intended use and *indicative* inputs and outputs, plus review metadata for each skill. Use the six-step checklist to track package inspection, ownership/usage rights, input-output contract, runtime requirements, security review and sandbox validation. A skill can be marked integration-ready **only after all six checks and a package reference are provided**; this is a self-attestation, not actual execution authorization.
 
-The inventory can export a CSV and a proposed agent-router-candidates JSON file. The router JSON marks every unverified skill `executionEligible: false`; it is **not an executable skill manifest**. The global workbench JSON export also includes the 21-skill catalogue and local verification notes.
+The inventory can export a CSV and a proposed agent-router-candidates JSON file. The router JSON marks every unverified skill `executionEligible: false`; it is **not an executable skill manifest**. The global workbench JSON export also includes the 20-skill catalogue and active-skill verification notes. The removed entry's identifier (CS-018) is intentionally not reused, so existing review IDs stay stable. Any pre-existing local review of the retired entry is not included in exported inventories.
 
-**Security and ownership:** Some supplied titles include internal enterprise names or brand references. The public catalogue contains only the names and descriptions supplied for this prototype, and it does not include proprietary skill instructions, downloaded packages, approved templates, secrets or internal enterprise data. Verify redistribution rights and authorized use before connecting or distributing any package.
+**Security and ownership:** Public-facing titles are generic labels and do not imply that the underlying packages are publicly licensed or available. The catalogue does not include proprietary skill instructions, downloaded packages, approved templates, secrets or internal enterprise data. Verify redistribution rights and authorized use before connecting or distributing any package.
 
 ## Run
 
