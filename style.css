@@ -52,7 +52,7 @@
 @media(max-width:1100px){.evidence-form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.evidence-tab-actions{margin-left:0;width:100%}}
 @media(max-width:760px){.evidence-tools,.evidence-tools.compact{grid-template-columns:1fr}.evidence-form-grid{grid-template-columns:1fr}.evidence-form-grid .evidence-wide{grid-column:auto}.evidence-tabbar{align-items:stretch}.evidence-tabbar>button:not(.secondary){flex:1}.evidence-kpis.grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.evidence-channels.grid.two{grid-template-columns:1fr}.evidence-tab-actions button{flex:1}.evidence-overview>.primary{width:100%}}
 
-/* 21-skill consulting inventory */
+/* Consulting skill inventory */
 .skill-architecture-callout{margin-bottom:18px}
 .skill-notice{margin-bottom:18px;background:#f8f6ff;border-color:#dcd4fa;color:#54496d}
 .skill-kpis .card{padding:18px}
