@@ -38,7 +38,7 @@ function landingOverview(){
       <div><b>05</b><span>Interactive accelerators</span></div>
       <div><b>10</b><span>AI readiness dimensions</span></div>
       <div><b>43</b><span>Evidence-led assessment criteria</span></div>
-      <div><b>21</b><span>Consulting skill candidates</span></div>
+      <div><b>${String(registry.total).padStart(2,'0')}</b><span>Consulting skill candidates</span></div>
     </div>
 
     <section class="landing-section landing-thesis" aria-labelledby="landing-thesis-title">
