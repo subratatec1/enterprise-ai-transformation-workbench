@@ -29,7 +29,7 @@ const CONSULTING_SKILL_DATA=[
   ['CS-017','Presentation Talking Points','visual','Creates slide-by-slide presentation speaker notes.','Prepare executive pitch scripts and talking points.','speaker notes, presentation script','Presentation and audience context','Slide-by-slide speaker notes'],
   ['CS-019','Post-Meeting Summary & Action Items','delivery','Extracts decisions, responsibilities and actions from meeting transcripts.','Automatically update engagement actions and decisions.','action log, meeting follow-up','Authorized transcript or meeting notes','Decision and action-item register'],
   ['CS-020','Meeting Minutes Generator','delivery','Converts meeting notes into structured meeting minutes.','Produce standardized client meeting minutes.','meeting minutes, MoM','Approved meeting notes and attendee context','Structured minutes with owners and actions'],
-  ['CS-021','Skill Standard: Claude Skill Authoring Framework','governance','Provides a standard method for designing and governing reusable Skills.','Standardize new Skill development and onboarding.','skill authoring, governance standards','Skill requirements, design and validation criteria','Standardized skill specification and checklist']
+  ['CS-021','Skill Standard: Skill Authoring Framework','governance','Provides a standard method for designing and governing reusable Skills.','Standardize new Skill development and onboarding.','skill authoring, governance standards','Skill requirements, design and validation criteria','Standardized skill specification and checklist']
 ].map(([id,name,group,purpose,application,routingIntent,inputHint,outputHint])=>({id,name,group,purpose,application,routingIntent,inputHint,outputHint}));
 
 const SKILL_VERIFICATION_STEPS=[
