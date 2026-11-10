@@ -65,6 +65,6 @@ function landingOverview(){
     </div></section>
 
     <section class="landing-close" aria-labelledby="landing-close-title"><div><span class="landing-close-kicker">YOUR TRANSFORMATION STARTING POINT</span><h2 id="landing-close-title">Start with clarity.<br><em>Move with confidence.</em></h2><p>Use the framework to establish an evidence-based view of AI readiness, agree what matters most and shape a pragmatic enterprise roadmap.</p></div><div class="landing-close-actions"><button type="button" class="landing-button landing-button-primary" data-go="strategy">Start the AI assessment <span>↗</span></button><button type="button" class="landing-button landing-button-dark" data-go="architecture">Explore target architecture <span>↗</span></button></div></section>
-    <p class="landing-disclaimer">Framework prototype · Illustrative assumptions and sample values only. Client decisions require validated evidence and accountable approval. No confidential documents or skill packages are stored in this public site.</p>
+    <p class="landing-disclaimer">Framework prototype · Illustrative assumptions and sample values only. Client decisions require validated evidence and accountable approval. The reference skill package is public code; no confidential client documents or credentials are collected by this site.</p>
   </div>`;
 }
