@@ -1,0 +1,4 @@
+interface:
+  display_name: "Management Summary Generator"
+  short_description: "Create evidence-led executive management summaries"
+  default_prompt: "Use $management-summary-generator to turn these notes into a concise, evidence-led management summary."
