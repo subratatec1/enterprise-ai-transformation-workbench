@@ -1,0 +1,18 @@
+{
+  "headline": "Architecture readiness is progressing, with ownership validation still open",
+  "executive_summary": "The initial application inventory is 80% complete [S1:L2]. Ownership validation remains outstanding for 12 applications [S1:L3], and the steering group has approved a two-week extension [S1:L4].",
+  "key_findings": [
+    {"statement": "The application inventory is 80% complete across the initial scope.", "evidence": ["S1:L2"]},
+    {"statement": "Twelve application owners still require validation.", "evidence": ["S1:L3"]}
+  ],
+  "decisions": [
+    {"decision": "A two-week extension was approved for application ownership checks.", "status": "Agreed", "evidence": ["S1:L4"]}
+  ],
+  "risks": [
+    {"risk": "Unverified application owners may delay the target architecture review.", "evidence": ["S1:L5"]}
+  ],
+  "actions": [
+    {"action": "Validate the twelve application owner assignments.", "owner": "Enterprise Architecture team", "due_date": "20 November 2026", "status": "Agreed", "evidence": ["S1:L6"]}
+  ],
+  "open_questions": ["When will Finance complete its review of the cloud migration business case?"]
+}
