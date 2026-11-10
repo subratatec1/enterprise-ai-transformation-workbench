@@ -42,9 +42,10 @@ const SKILL_VERIFICATION_STEPS=[
 ];
 
 let skillUI={selectedId:'CS-001',group:'All',status:'All',search:'',notice:''};
+const BUILTIN_SKILL_PACKAGES={'CS-008':'skills/management-summary-generator/SKILL.md'};
 
 function ensureSkillState(){if(!state.skillReviews||typeof state.skillReviews!=='object')state.skillReviews={}}
-function skillReview(id){ensureSkillState();return state.skillReviews[id]||{packageRef:'',reviewer:'',notes:'',checks:{}}}
+function skillReview(id){ensureSkillState();return {packageRef:BUILTIN_SKILL_PACKAGES[id]||'',reviewer:'',notes:'',checks:{},...(state.skillReviews[id]||{})}}
 function checkedSteps(review){return SKILL_VERIFICATION_STEPS.filter(([k])=>Boolean(review.checks?.[k])).length}
 function skillReadiness(id){
   const r=skillReview(id),count=checkedSteps(r);
@@ -70,6 +71,7 @@ function skillCardRow(skill){
 }
 function skillDetail(skill){
   const review=skillReview(skill.id),st=skillReadiness(skill.id),group=CONSULTING_SKILL_GROUPS.find(g=>g.id===skill.group);
+  const pilot=skill.id==='CS-008'?`<div class="callout" style="margin-top:16px"><b>First developed skill package:</b> A source-linked methodology, reference rubric, model-gateway runner and deterministic tests are available. Production execution still requires the verification checklist, approved model access and a secured runtime.<div class="action-row"><button type="button" class="primary" data-go="summary">Try the safe local preview ↗</button><a class="secondary" href="https://github.com/subratatec1/enterprise-ai-transformation-workbench/tree/main/skills/management-summary-generator" target="_blank" rel="noopener noreferrer">View skill package ↗</a></div></div>`:'';
   return `<div class="skill-detail-head"><span class="eyebrow">${skill.id} · ${esc(group.label)}</span><h2>${esc(skill.name)}</h2><p>${esc(skill.purpose)}</p><span class="tag ${st.tone==='neutral'?'':st.tone}">${st.label} · ${st.count}/${SKILL_VERIFICATION_STEPS.length} checks</span></div>
   <div class="skill-application"><b>Suggested consulting application</b><p>${esc(skill.application)}</p><div class="skill-io"><div><span>Candidate routing intent</span><strong>${esc(skill.routingIntent)}</strong></div><div><span>Indicative input</span><strong>${esc(skill.inputHint)}</strong></div><div><span>Indicative output</span><strong>${esc(skill.outputHint)}</strong></div></div><p class="small muted">Proposed from the supplied descriptions; verify against the downloaded package before implementation.</p></div>
   <h3>Onboarding & execution verification</h3><p class="small muted">A status is self-attested in this browser. This public prototype cannot inspect packages or grant runtime approval.</p>
@@ -77,7 +79,7 @@ function skillDetail(skill){
   <div class="field"><label for="skill-source">Safe package reference / internal catalogue ID</label><input id="skill-source" data-skill-review="packageRef" value="${esc(review.packageRef||'')}" maxlength="160" placeholder="Metadata reference only; no credential or package upload"></div>
   <div class="field"><label for="skill-reviewer">Review owner (role or team)</label><input id="skill-reviewer" data-skill-review="reviewer" value="${esc(review.reviewer||'')}" maxlength="100" placeholder="e.g. AI Consulting CoE"></div>
   <div class="field"><label for="skill-notes">Verification notes / execution prerequisites</label><textarea id="skill-notes" data-skill-review="notes" rows="3" maxlength="1500" placeholder="Record package version, validation gaps, approved runtime dependencies; do not enter confidential content">${esc(review.notes||'')}</textarea></div>
-  <div class="callout ${st.key==='Ready'?'':'warning'}"><b>${st.key==='Ready'?'All six onboarding checks marked complete.':'Execution remains disabled in this MVP.'}</b> ${st.key==='Ready'?'A production orchestrator must still independently verify artifacts, identities, permissions and approvals.':'Obtain and inspect the actual package, complete verification and enforce enterprise access policies before routing calls to this skill.'}</div>`;
+  <div class="callout ${st.key==='Ready'?'':'warning'}"><b>${st.key==='Ready'?'All six onboarding checks marked complete.':'Execution remains disabled in this public MVP.'}</b> ${st.key==='Ready'?'A production orchestrator must still independently verify artifacts, identities, permissions and approvals.':'Obtain and inspect the actual package, complete verification and enforce enterprise access policies before routing calls to this skill.'}</div>${pilot}`;
 }
 function skillInventory(){
   ensureSkillState();const metrics=skillInventoryReport(),search=skillUI.search.trim().toLowerCase();
@@ -88,7 +90,7 @@ function skillInventory(){
   });
   if(matches.length&&!matches.some(s=>s.id===skillUI.selectedId))skillUI.selectedId=matches[0].id;
   const selected=matches.find(s=>s.id===skillUI.selectedId)||null;
-  return `<div class="callout skill-notice"><b>Catalogue scope:</b> These ${metrics.total} skill candidates are maintained for inventory purposes. Names have been generalized for public display; actual package metadata and permissions must be verified. No packages have been uploaded, inspected, licensed, installed or executed. Brand- or enterprise-specific skills require owner authorization before use or redistribution. Do not store confidential implementation details on this public static site.</div>
+  return `<div class="callout skill-notice"><b>Catalogue scope:</b> These ${metrics.total} skill candidates are maintained for inventory purposes. One reference package (Management Summary Generator) is available as source code; other entries remain descriptive candidates. No skill packages execute on this static page, and all production integrations require separate authorization. Do not enter confidential information in this public prototype.</div>
   <div class="grid four skill-kpis">${card(`<div class="small muted">Skills catalogued</div><div class="kpi">${metrics.total}</div><span class="pill blue">5 categories</span>`)}${card(`<div class="small muted">Package references added</div><div class="kpi">${metrics.packagesReferenced}</div><span class="pill">Metadata only</span>`)}${card(`<div class="small muted">Skills in verification</div><div class="kpi">${metrics.inReview}</div><span class="pill amber">Checks incomplete</span>`)}${card(`<div class="small muted">Marked integration-ready</div><div class="kpi">${metrics.markedReady}</div><span class="pill blue">Self-attested only</span>`)}</div>
   ${section('Complete consulting skill catalogue','Discover reusable capabilities, review intended use and maintain an execution-readiness inventory.')}
   <div class="skill-category-strip">${CONSULTING_SKILL_GROUPS.map(g=>`<button type="button" class="skill-category ${skillUI.group===g.id?'active':''}" data-skill-category="${g.id}"><span>${esc(g.short)}</span><b>${CONSULTING_SKILL_DATA.filter(s=>s.group===g.id).length}</b></button>`).join('')}</div>
